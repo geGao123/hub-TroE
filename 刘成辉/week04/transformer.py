@@ -5,56 +5,49 @@ import torch.nn as nn
 
 class MultiHeadAttention(nn.Module):
     """
-    第二、三阶段：多头注意力机制 (灵魂)
+    高效的多头注意力机制 (无显式复制)
     """
 
     def __init__(self, d_model, n_heads, dropout):
         super().__init__()
-        # 保证 维度 可以被整除
         assert d_model % n_heads == 0
         self.d_k = d_model // n_heads
         self.d_model = d_model
         self.n_heads = n_heads
 
-        self.w_q = nn.Linear(d_model, d_model)
-        self.w_k = nn.Linear(d_model, d_model)
-        self.w_v = nn.Linear(d_model, d_model)
-
+        self.w_qkv = nn.Linear(d_model, 3 * d_model)
         self.fc_out = nn.Linear(d_model, d_model)
         self.dropout = nn.Dropout(dropout)
 
-    def forward(self, q, k, v, mask=None):
-        batch_size = q.size(0)
+    def forward(self, x, mask=None):
+        batch_size, seq_length, _ = x.shape
 
-        # 1. 线性变换得到 Q, K, V
-        # q:
-        # view:[batch_size, seq_length, d_model] -> [batch_size, seq_length, self.n_heads, self.d_k]
-        # transpose:-> [batch_size, self.n_heads, seq_length, self.d_k]
-        Q = self.w_q(q).view(batch_size, -1, self.n_heads, self.d_k).transpose(1, 2)
-        K = self.w_k(k).view(batch_size, -1, self.n_heads, self.d_k).transpose(1, 2)
-        V = self.w_v(v).view(batch_size, -1, self.n_heads, self.d_k).transpose(1, 2)
+        # 融合投影 + chunk 物理切块
+        qkv_fused = self.w_qkv(x)
+        q, k, v = qkv_fused.chunk(3, dim=-1)
 
-        # 2. 计算 Scaled Dot-Product Attention: softmax(QK^T / sqrt(dk)) * V [cite: 38]
-        # [batch_size, self.n_heads, seq_length, self.d_k] * [batch_size, self.n_heads, self.d_k, seq_length]
-        scores = Q @ K.transpose(-2, -1)/math.sqrt(self.d_k)
-        # 应用 Mask (如果提供)
+        # 多头拆分 [B, H, L, d_k]
+        q = q.view(batch_size, seq_length, self.n_heads, self.d_k).transpose(1, 2)
+        k = k.view(batch_size, seq_length, self.n_heads, self.d_k).transpose(1, 2)
+        v = v.view(batch_size, seq_length, self.n_heads, self.d_k).transpose(1, 2)
+
+        # 矩阵乘法计算注意力分数
+        scores = q @ k.transpose(-2, -1) / math.sqrt(self.d_k)
+
         if mask is not None:
-            # 这里的 mask 主要是 Padding Mask
-            # 将 mask 为 0 的位置填入一个极小值，使其在 softmax 后接近 0
             scores = scores.masked_fill(mask == 0, -1e9)
 
         attention = nn.functional.softmax(scores, dim=-1)
-        # 应用 Dropout
         attention = self.dropout(attention)
 
-        out_put = (attention @ V).transpose(1, 2).contiguous().view(batch_size, -1, self.d_model)
+        # 头拼接还原
+        out_put = (attention @ v).transpose(1, 2).contiguous().view(batch_size, seq_length, self.d_model)
         return self.fc_out(out_put)
 
 
 class TransformerBlock(nn.Module):
     """
-    第四阶段：Encoder Block (模块化)
-    包含：MHA + Add&Norm + FFN + Add&Norm
+    模块化的 Transformer Encoder 层 (采用现代大模型标准的 Pre-LN 结构)
     """
 
     def __init__(self, d_model, n_heads, d_ff, dropout):
@@ -67,6 +60,7 @@ class TransformerBlock(nn.Module):
         self.ffn = nn.Sequential(
             nn.Linear(d_model, d_ff),
             nn.GELU(),
+            nn.Dropout(dropout),  # ✨ 补充规范：FFN 内部的 Dropout 极为重要
             nn.Linear(d_ff, d_model)
             # 实现两层线性层，中间夹一个激活函数（BERT常用GELU）
         )
@@ -74,15 +68,13 @@ class TransformerBlock(nn.Module):
 
         self.dropout = nn.Dropout(dropout)
 
-    def forward(self, x, mask):
-        residual = x
-        qkv = self.norm1(x)
-        # 实现残差连接：x = x + self.attention(x) -> norm(x)
-        x = self.attention(qkv, qkv, qkv, mask)
-        x = self.dropout(x)
-        x = residual + x
+    def forward(self, x, mask=None):
+        # --- 第一子层：MHA + Add & Norm (Pre-Norm 结构) ---
+        attn_out = self.attention(self.norm1(x), mask)
+        x = x + self.dropout(attn_out)  # 残差相加
 
-        residual = x
-        x = self.ffn(self.norm2(x))
-        x = residual + x
+        # --- 第二子层：FFN + Add & Norm ---
+        ffn_out = self.ffn(self.norm2(x))
+        x = x + self.dropout(ffn_out)  # ✨ 补充规范：FFN 输出后同样做一次 Dropout 再残差
+
         return x
