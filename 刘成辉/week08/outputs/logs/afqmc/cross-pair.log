@@ -1,0 +1,19 @@
+2026-06-30 16:59:25,541 | INFO    | troe.train | device=mps | use_amp=False
+2026-06-30 16:59:25,541 | INFO    | troe.train | output_dir=runs/afqmc/cross-pair
+2026-06-30 16:59:25,542 | INFO    | troe.train | total_steps=537 steps_per_epoch=537
+2026-06-30 16:59:27,820 | INFO    | troe.train | step 1/537  loss=0.7634  lr=3.77e-07  elapsed=2.3s  acc=0.3906
+2026-06-30 17:02:06,089 | INFO    | troe.train | step 50/537  loss=0.5344  lr=1.89e-05  elapsed=160.5s  acc=0.7656
+2026-06-30 17:03:37,322 | INFO    | troe.train | step 100/537  loss=0.5656  lr=1.81e-05  elapsed=251.8s  acc=0.6562
+2026-06-30 17:05:07,793 | INFO    | troe.train | step 150/537  loss=0.5695  lr=1.60e-05  elapsed=342.2s  acc=0.6719
+2026-06-30 17:08:18,370 | INFO    | troe.train | step 200/537  loss=0.6138  lr=1.39e-05  elapsed=532.8s  acc=0.6562
+2026-06-30 17:08:33,878 | INFO    | troe.train | eval @ step 200: {'acc': 0.6948563484708064, 'n': 4316, 'step': 200}
+2026-06-30 17:09:11,416 | INFO    | troe.train | step 250/537  loss=0.6882  lr=1.19e-05  elapsed=585.9s  acc=0.6094
+2026-06-30 17:09:47,659 | INFO    | troe.train | step 300/537  loss=0.4358  lr=9.79e-06  elapsed=622.1s  acc=0.7656
+2026-06-30 17:10:24,524 | INFO    | troe.train | step 350/537  loss=0.4644  lr=7.73e-06  elapsed=659.0s  acc=0.7969
+2026-06-30 17:11:02,371 | INFO    | troe.train | step 400/537  loss=0.5131  lr=5.66e-06  elapsed=696.8s  acc=0.7188
+2026-06-30 17:11:18,282 | INFO    | troe.train | eval @ step 400: {'acc': 0.7147822057460612, 'n': 4316, 'step': 400}
+2026-06-30 17:11:56,700 | INFO    | troe.train | step 450/537  loss=0.5647  lr=3.60e-06  elapsed=751.2s  acc=0.6719
+2026-06-30 17:12:36,128 | INFO    | troe.train | step 500/537  loss=0.3662  lr=1.53e-06  elapsed=790.6s  acc=0.7969
+2026-06-30 17:13:19,691 | INFO    | troe.train | FINAL eval: {'acc': 0.7208063021316033, 'n': 4316}
+2026-06-30 17:13:19,691 | INFO    | troe.train | checkpoint=runs/afqmc/cross-pair/ckpt-537
+2026-06-30 17:13:20,690 | INFO    | troe.train | loss-curve plot=/Users/timi/PycharmProjects/hub-TroE/刘成辉/week08/outputs/plots/afqmc_cross-pair_loss.png

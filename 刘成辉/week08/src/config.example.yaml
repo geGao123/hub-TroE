@@ -1,0 +1,75 @@
+# ---------------------------------------------------------------------------
+# Example YAML config for week08 entry points.
+# Priority:  CLI flag  >  this file  >  hardcoded default in the script.
+#
+# Usage:
+#   python train.py --config configs/afqmc_bce.yaml
+#   python train.py --config configs/afqmc_bce.yaml --epochs 5
+#       # CLI bumps epochs to 5; YAML stays for the rest
+#
+# Anything you don't set here falls back to the script's built-in default
+# (kept in sync with the docstring at the top of each entry point).
+# Unknown keys are ignored with a warning.
+# ---------------------------------------------------------------------------
+
+# ----- core -----
+mode: bi                    # "bi" | "cross"
+loss: triplet                  # "pair" (BCE) | "cosent" | "triplet" | "hybrid"
+dataset: afqmc              # "afqmc" | "bq_corpus" | "lcqmc"
+model_name: bert-base-chinese
+
+# ----- paths (override defaults in config.py) -----
+data_root: /Users/timi/PycharmProjects/hub-TroE/刘成辉/week08/data
+output_dir: runs
+cache_dir: null
+# Pretrained-model root. Combined with `model_name` to locate the actual
+# checkpoint on disk; falls back to HF Hub if neither this nor the default
+# `config.PRETRAIN_DIR` (env: TROE_PRETRAIN_DIR, default: ../pretrain_models)
+# contains `<root>/<model_name>`. Set to null/omit to use config default.
+pretrain_dir: /Volumes/timi/pretrain_models
+
+# ----- optimization -----
+epochs: 1
+batch_size: 64
+eval_batch_size: 64
+lr: 2.0e-5
+weight_decay: 0.01
+warmup_ratio: 0.1
+max_grad_norm: 1.0
+max_train_steps: -1          # -1 = use epochs * steps_per_epoch
+eval_steps: 200
+save_steps: 0                # 0 = only save at end
+logging_steps: 50
+seed: 42
+
+# ----- data -----
+max_length: 64               # per-sentence max length (BI mode)
+max_length_pair: 128         # pair max length (Cross mode)
+num_workers: 0
+
+# ----- model & loss knobs -----
+pooling: mean                # "mean" | "cls"
+proj_dim: 0                  # 0 = no projection head
+margin: 1.0                  # triplet margin
+no_normalize: false          # true to disable L2 normalize before triplet distance
+
+# ----- training infra -----
+no_amp: false                # disable mixed precision even on cuda
+no_progress_bar: false       # disable the single-line CLI progress bar
+                            # (auto-disabled when stdout isn't a TTY)
+
+# ---------------------------------------------------------------------------
+# evaluate.py / analyze_badcases.py / compare_methods.py share a subset of
+# the above (split, max_length, batch_size, ...). The same `--config` flag is
+# accepted everywhere; only the relevant keys are consumed per script.
+# ---------------------------------------------------------------------------
+
+# For compare_methods.py, --mode (the repeatable `name:path` list) can also
+# come from YAML:
+#
+#   mode:
+#     - bi-pair:runs/afqmc/bi-pair/ckpt-3000
+#     - cross-pair:runs/afqmc/cross-pair/ckpt-3000
+#
+# (This bypasses argparse's required=True for `--mode` so a compare run can
+# also be YAML-only.)

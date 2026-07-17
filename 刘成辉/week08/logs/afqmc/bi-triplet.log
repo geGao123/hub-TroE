@@ -1,0 +1,9 @@
+2026-06-27 20:12:41,644 | INFO    | troe.train | device=mps | use_amp=False
+2026-06-27 20:12:41,644 | INFO    | troe.train | output_dir=刘成辉/week08/src/_smoke_runs/afqmc/bi-triplet
+2026-06-27 20:12:41,644 | INFO    | troe.train | total_steps=3 steps_per_epoch=2644
+2026-06-27 20:12:47,362 | INFO    | troe.train | step 1/3  loss=0.9196  lr=1.33e-05  elapsed=5.7s  d_pos=0.290  d_neg=0.371  gap=0.080
+2026-06-27 20:12:47,388 | INFO    | troe.train | step 2/3  loss=0.9825  lr=6.67e-06  elapsed=5.7s  d_pos=0.307  d_neg=0.325  gap=0.017
+2026-06-27 20:12:47,411 | INFO    | troe.train | step 3/3  loss=0.9151  lr=0.00e+00  elapsed=5.8s  d_pos=0.322  d_neg=0.407  gap=0.085
+2026-06-27 20:12:48,579 | INFO    | troe.train | FINAL eval: {'acc': 0.6869786977767944, 'n': 4316}
+2026-06-27 20:12:48,591 | INFO    | troe.train | checkpoint=刘成辉/week08/src/_smoke_runs/afqmc/bi-triplet/ckpt-3
+2026-06-27 20:12:48,827 | INFO    | troe.train | loss-curve plot=/Users/timi/PycharmProjects/hub-TroE/刘成辉/week08/plots/afqmc_bi-triplet_loss.png

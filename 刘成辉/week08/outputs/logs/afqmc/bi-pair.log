@@ -1,0 +1,121 @@
+2026-06-29 19:45:21,858 | INFO    | troe.train | device=mps | use_amp=False
+2026-06-29 19:45:21,858 | INFO    | troe.train | output_dir=/Users/timi/PycharmProjects/hub-TroE/刘成辉/week08/src/runs/afqmc/bi-pair
+2026-06-29 19:45:21,858 | INFO    | troe.train | total_steps=1 steps_per_epoch=1073
+2026-06-29 19:45:23,863 | INFO    | troe.train | step 1/1  loss=0.7220  lr=0.00e+00  elapsed=1.8s  acc=0.2500
+2026-06-29 19:45:35,226 | INFO    | troe.train | FINAL eval: {'acc': 0.6869786977767944, 'n': 4316}
+2026-06-30 12:18:46,275 | INFO    | troe.train | device=mps | use_amp=False
+2026-06-30 12:18:46,275 | INFO    | troe.train | output_dir=/Users/timi/PycharmProjects/hub-TroE/刘成辉/week08/src/runs/afqmc/bi-pair
+2026-06-30 12:18:46,275 | INFO    | troe.train | total_steps=1 steps_per_epoch=4292
+2026-06-30 12:19:14,764 | INFO    | troe.train | device=mps | use_amp=False
+2026-06-30 12:19:14,764 | INFO    | troe.train | output_dir=/Users/timi/PycharmProjects/hub-TroE/刘成辉/week08/src/runs/afqmc/bi-pair
+2026-06-30 12:19:14,765 | INFO    | troe.train | total_steps=1 steps_per_epoch=4292
+2026-06-30 12:45:39,083 | INFO    | troe.train | device=mps | use_amp=False
+2026-06-30 12:46:19,407 | INFO    | troe.train | device=mps | use_amp=False
+2026-06-30 12:47:17,049 | INFO    | troe.train | device=mps | use_amp=False
+2026-06-30 12:47:17,049 | INFO    | troe.train | output_dir=runs/afqmc/bi-pair
+2026-06-30 12:47:17,049 | INFO    | troe.train | total_steps=3219 steps_per_epoch=1073
+2026-06-30 12:47:18,561 | INFO    | troe.train | step 1/3219  loss=0.7111  lr=6.23e-08  elapsed=1.5s  acc=0.3125
+2026-06-30 12:47:38,757 | INFO    | troe.train | step 50/3219  loss=0.6823  lr=3.12e-06  elapsed=21.6s  acc=0.5938
+2026-06-30 13:01:35,080 | INFO    | troe.train | device=mps | use_amp=False
+2026-06-30 13:01:35,080 | INFO    | troe.train | output_dir=runs/afqmc/bi-pair
+2026-06-30 13:01:35,081 | INFO    | troe.train | total_steps=3219 steps_per_epoch=1073
+2026-06-30 13:01:35,712 | INFO    | troe.train | step 1/3219  loss=0.7111  lr=6.23e-08  elapsed=0.6s  acc=0.3125
+2026-06-30 13:01:55,476 | INFO    | troe.train | step 50/3219  loss=0.6822  lr=3.12e-06  elapsed=20.4s  acc=0.5938
+2026-06-30 13:02:12,989 | INFO    | troe.train | step 100/3219  loss=0.7256  lr=6.23e-06  elapsed=37.9s  acc=0.5312
+2026-06-30 13:02:32,700 | INFO    | troe.train | step 150/3219  loss=0.6550  lr=9.35e-06  elapsed=57.6s  acc=0.6250
+2026-06-30 13:02:52,433 | INFO    | troe.train | step 200/3219  loss=0.5487  lr=1.25e-05  elapsed=77.4s  acc=0.8438
+2026-06-30 13:03:10,242 | INFO    | troe.train | eval @ step 200: {'acc': 0.6862835884094238, 'n': 4316, 'step': 200}
+2026-06-30 13:03:29,386 | INFO    | troe.train | step 250/3219  loss=0.6532  lr=1.56e-05  elapsed=114.3s  acc=0.5625
+2026-06-30 13:03:47,710 | INFO    | troe.train | step 300/3219  loss=0.4837  lr=1.87e-05  elapsed=132.6s  acc=0.7812
+2026-06-30 13:04:06,562 | INFO    | troe.train | step 350/3219  loss=0.7453  lr=1.98e-05  elapsed=151.5s  acc=0.5625
+2026-06-30 13:04:25,527 | INFO    | troe.train | step 400/3219  loss=0.5978  lr=1.95e-05  elapsed=170.4s  acc=0.7188
+2026-06-30 13:04:41,821 | INFO    | troe.train | eval @ step 400: {'acc': 0.6960148215293884, 'n': 4316, 'step': 400}
+2026-06-30 13:05:00,204 | INFO    | troe.train | step 450/3219  loss=0.6558  lr=1.91e-05  elapsed=205.1s  acc=0.5938
+2026-06-30 13:05:18,467 | INFO    | troe.train | step 500/3219  loss=0.5029  lr=1.88e-05  elapsed=223.4s  acc=0.8438
+2026-06-30 13:05:36,928 | INFO    | troe.train | step 550/3219  loss=0.4624  lr=1.84e-05  elapsed=241.8s  acc=0.7500
+2026-06-30 13:05:56,534 | INFO    | troe.train | step 600/3219  loss=0.5211  lr=1.81e-05  elapsed=261.5s  acc=0.7500
+2026-06-30 13:06:14,773 | INFO    | troe.train | eval @ step 600: {'acc': 0.7073679566383362, 'n': 4316, 'step': 600}
+2026-06-30 13:06:32,813 | INFO    | troe.train | step 650/3219  loss=0.5235  lr=1.77e-05  elapsed=297.7s  acc=0.7500
+2026-06-30 13:06:51,055 | INFO    | troe.train | step 700/3219  loss=0.5118  lr=1.74e-05  elapsed=316.0s  acc=0.8125
+2026-06-30 13:07:10,024 | INFO    | troe.train | step 750/3219  loss=0.6464  lr=1.70e-05  elapsed=334.9s  acc=0.5938
+2026-06-30 13:07:27,342 | INFO    | troe.train | step 800/3219  loss=0.5714  lr=1.67e-05  elapsed=352.3s  acc=0.6875
+2026-06-30 13:07:44,093 | INFO    | troe.train | eval @ step 800: {'acc': 0.7075996398925781, 'n': 4316, 'step': 800}
+2026-06-30 13:08:03,348 | INFO    | troe.train | step 850/3219  loss=0.5914  lr=1.63e-05  elapsed=388.3s  acc=0.6250
+2026-06-30 13:08:23,488 | INFO    | troe.train | step 900/3219  loss=0.5868  lr=1.60e-05  elapsed=408.4s  acc=0.7500
+2026-06-30 13:08:42,317 | INFO    | troe.train | step 950/3219  loss=0.5864  lr=1.57e-05  elapsed=427.2s  acc=0.6562
+2026-06-30 13:09:03,203 | INFO    | troe.train | step 1000/3219  loss=0.3995  lr=1.53e-05  elapsed=448.1s  acc=0.8438
+2026-06-30 13:09:19,323 | INFO    | troe.train | eval @ step 1000: {'acc': 0.7115384340286255, 'n': 4316, 'step': 1000}
+2026-06-30 13:09:37,602 | INFO    | troe.train | step 1050/3219  loss=0.4109  lr=1.50e-05  elapsed=482.5s  acc=0.7500
+2026-06-30 13:09:58,199 | INFO    | troe.train | step 1100/3219  loss=0.6661  lr=1.46e-05  elapsed=503.1s  acc=0.5625
+2026-06-30 13:10:16,434 | INFO    | troe.train | step 1150/3219  loss=0.5273  lr=1.43e-05  elapsed=521.4s  acc=0.6250
+2026-06-30 13:10:34,680 | INFO    | troe.train | step 1200/3219  loss=0.4978  lr=1.39e-05  elapsed=539.6s  acc=0.7500
+2026-06-30 13:10:50,997 | INFO    | troe.train | eval @ step 1200: {'acc': 0.7164040803909302, 'n': 4316, 'step': 1200}
+2026-06-30 13:11:09,189 | INFO    | troe.train | step 1250/3219  loss=0.5424  lr=1.36e-05  elapsed=574.1s  acc=0.7500
+2026-06-30 13:11:27,813 | INFO    | troe.train | step 1300/3219  loss=0.4526  lr=1.32e-05  elapsed=592.7s  acc=0.7500
+2026-06-30 13:11:45,807 | INFO    | troe.train | step 1350/3219  loss=0.4529  lr=1.29e-05  elapsed=610.7s  acc=0.7500
+2026-06-30 13:12:04,057 | INFO    | troe.train | step 1400/3219  loss=0.4633  lr=1.26e-05  elapsed=629.0s  acc=0.7812
+2026-06-30 13:12:20,330 | INFO    | troe.train | eval @ step 1400: {'acc': 0.7228915691375732, 'n': 4316, 'step': 1400}
+2026-06-30 13:12:38,375 | INFO    | troe.train | step 1450/3219  loss=0.3582  lr=1.22e-05  elapsed=663.3s  acc=0.8125
+2026-06-30 13:12:56,216 | INFO    | troe.train | step 1500/3219  loss=0.5157  lr=1.19e-05  elapsed=681.1s  acc=0.7500
+2026-06-30 13:13:14,836 | INFO    | troe.train | step 1550/3219  loss=0.3825  lr=1.15e-05  elapsed=699.8s  acc=0.8438
+2026-06-30 13:13:32,847 | INFO    | troe.train | step 1600/3219  loss=0.4782  lr=1.12e-05  elapsed=717.8s  acc=0.6875
+2026-06-30 13:13:49,157 | INFO    | troe.train | eval @ step 1600: {'acc': 0.7242817282676697, 'n': 4316, 'step': 1600}
+2026-06-30 13:14:07,858 | INFO    | troe.train | step 1650/3219  loss=0.4817  lr=1.08e-05  elapsed=752.8s  acc=0.7188
+2026-06-30 13:14:25,412 | INFO    | troe.train | step 1700/3219  loss=0.3421  lr=1.05e-05  elapsed=770.3s  acc=0.8438
+2026-06-30 13:14:43,157 | INFO    | troe.train | step 1750/3219  loss=0.4901  lr=1.01e-05  elapsed=788.1s  acc=0.6562
+2026-06-30 13:15:01,487 | INFO    | troe.train | step 1800/3219  loss=0.4856  lr=9.79e-06  elapsed=806.4s  acc=0.7188
+2026-06-30 13:15:17,825 | INFO    | troe.train | eval @ step 1800: {'acc': 0.7270621061325073, 'n': 4316, 'step': 1800}
+2026-06-30 13:15:36,669 | INFO    | troe.train | step 1850/3219  loss=0.4909  lr=9.45e-06  elapsed=841.6s  acc=0.7500
+2026-06-30 13:15:54,632 | INFO    | troe.train | step 1900/3219  loss=0.2844  lr=9.10e-06  elapsed=859.6s  acc=0.9062
+2026-06-30 13:16:13,064 | INFO    | troe.train | step 1950/3219  loss=0.4213  lr=8.76e-06  elapsed=878.0s  acc=0.7812
+2026-06-30 13:16:30,185 | INFO    | troe.train | step 2000/3219  loss=0.4749  lr=8.41e-06  elapsed=895.1s  acc=0.7500
+2026-06-30 13:16:45,568 | INFO    | troe.train | eval @ step 2000: {'acc': 0.7247451543807983, 'n': 4316, 'step': 2000}
+2026-06-30 13:17:03,033 | INFO    | troe.train | step 2050/3219  loss=0.4314  lr=8.07e-06  elapsed=928.0s  acc=0.8438
+2026-06-30 13:17:20,643 | INFO    | troe.train | step 2100/3219  loss=0.3385  lr=7.72e-06  elapsed=945.6s  acc=0.8125
+2026-06-30 13:17:37,980 | INFO    | troe.train | step 2150/3219  loss=0.7083  lr=7.38e-06  elapsed=962.9s  acc=0.7812
+2026-06-30 13:17:55,978 | INFO    | troe.train | step 2200/3219  loss=0.5560  lr=7.03e-06  elapsed=980.9s  acc=0.6875
+2026-06-30 13:18:11,449 | INFO    | troe.train | eval @ step 2200: {'acc': 0.7175625562667847, 'n': 4316, 'step': 2200}
+2026-06-30 13:18:28,115 | INFO    | troe.train | step 2250/3219  loss=0.4666  lr=6.69e-06  elapsed=1013.0s  acc=0.8125
+2026-06-30 13:18:45,697 | INFO    | troe.train | step 2300/3219  loss=0.4125  lr=6.34e-06  elapsed=1030.6s  acc=0.7188
+2026-06-30 13:19:03,301 | INFO    | troe.train | step 2350/3219  loss=0.4178  lr=6.00e-06  elapsed=1048.2s  acc=0.7812
+2026-06-30 13:19:20,491 | INFO    | troe.train | step 2400/3219  loss=0.4982  lr=5.65e-06  elapsed=1065.4s  acc=0.7500
+2026-06-30 13:19:35,928 | INFO    | troe.train | eval @ step 2400: {'acc': 0.7277571558952332, 'n': 4316, 'step': 2400}
+2026-06-30 13:19:52,891 | INFO    | troe.train | step 2450/3219  loss=0.3666  lr=5.31e-06  elapsed=1097.8s  acc=0.8750
+2026-06-30 13:20:10,501 | INFO    | troe.train | step 2500/3219  loss=0.2202  lr=4.96e-06  elapsed=1115.4s  acc=0.9062
+2026-06-30 13:20:27,531 | INFO    | troe.train | step 2550/3219  loss=0.3561  lr=4.62e-06  elapsed=1132.4s  acc=0.8438
+2026-06-30 13:20:45,007 | INFO    | troe.train | step 2600/3219  loss=0.2957  lr=4.27e-06  elapsed=1149.9s  acc=0.9062
+2026-06-30 13:21:00,435 | INFO    | troe.train | eval @ step 2600: {'acc': 0.7275254726409912, 'n': 4316, 'step': 2600}
+2026-06-30 13:21:17,281 | INFO    | troe.train | step 2650/3219  loss=0.3892  lr=3.93e-06  elapsed=1182.2s  acc=0.8438
+2026-06-30 13:21:34,710 | INFO    | troe.train | step 2700/3219  loss=0.2657  lr=3.58e-06  elapsed=1199.6s  acc=0.8438
+2026-06-30 13:21:51,918 | INFO    | troe.train | step 2750/3219  loss=0.4789  lr=3.24e-06  elapsed=1216.8s  acc=0.6562
+2026-06-30 13:22:08,465 | INFO    | troe.train | step 2800/3219  loss=0.3990  lr=2.89e-06  elapsed=1233.4s  acc=0.7812
+2026-06-30 13:22:23,879 | INFO    | troe.train | eval @ step 2800: {'acc': 0.7349397540092468, 'n': 4316, 'step': 2800}
+2026-06-30 13:22:41,228 | INFO    | troe.train | step 2850/3219  loss=0.4510  lr=2.55e-06  elapsed=1266.1s  acc=0.7188
+2026-06-30 13:22:58,761 | INFO    | troe.train | step 2900/3219  loss=0.3452  lr=2.20e-06  elapsed=1283.7s  acc=0.7812
+2026-06-30 13:23:15,387 | INFO    | troe.train | step 2950/3219  loss=0.3257  lr=1.86e-06  elapsed=1300.3s  acc=0.8125
+2026-06-30 13:23:32,895 | INFO    | troe.train | step 3000/3219  loss=0.2289  lr=1.51e-06  elapsed=1317.8s  acc=0.9688
+2026-06-30 13:23:48,320 | INFO    | troe.train | eval @ step 3000: {'acc': 0.7342446446418762, 'n': 4316, 'step': 3000}
+2026-06-30 13:24:06,127 | INFO    | troe.train | step 3050/3219  loss=0.4598  lr=1.17e-06  elapsed=1351.0s  acc=0.7812
+2026-06-30 13:24:23,101 | INFO    | troe.train | step 3100/3219  loss=0.5231  lr=8.21e-07  elapsed=1368.0s  acc=0.6562
+2026-06-30 13:24:41,154 | INFO    | troe.train | step 3150/3219  loss=0.2693  lr=4.76e-07  elapsed=1386.1s  acc=0.9375
+2026-06-30 13:24:58,380 | INFO    | troe.train | step 3200/3219  loss=0.6427  lr=1.31e-07  elapsed=1403.3s  acc=0.7500
+2026-06-30 13:25:13,847 | INFO    | troe.train | eval @ step 3200: {'acc': 0.7328544855117798, 'n': 4316, 'step': 3200}
+2026-06-30 15:57:04,452 | INFO    | troe.train | device=mps | use_amp=False
+2026-06-30 15:57:04,452 | INFO    | troe.train | output_dir=runs/afqmc/bi-pair
+2026-06-30 15:57:04,453 | INFO    | troe.train | total_steps=537 steps_per_epoch=537
+2026-06-30 15:57:05,777 | INFO    | troe.train | step 1/537  loss=0.7101  lr=3.77e-07  elapsed=1.3s  acc=0.3281
+2026-06-30 15:57:45,341 | INFO    | troe.train | step 50/537  loss=0.6411  lr=1.89e-05  elapsed=40.9s  acc=0.6562
+2026-06-30 15:58:26,884 | INFO    | troe.train | step 100/537  loss=0.5872  lr=1.81e-05  elapsed=82.4s  acc=0.7344
+2026-06-30 15:59:05,784 | INFO    | troe.train | step 150/537  loss=0.5175  lr=1.60e-05  elapsed=121.3s  acc=0.7500
+2026-06-30 15:59:45,340 | INFO    | troe.train | step 200/537  loss=0.6048  lr=1.39e-05  elapsed=160.9s  acc=0.7031
+2026-06-30 16:00:02,179 | INFO    | troe.train | eval @ step 200: {'acc': 0.6994902491569519, 'n': 4316, 'step': 200}
+2026-06-30 16:00:42,585 | INFO    | troe.train | step 250/537  loss=0.5404  lr=1.19e-05  elapsed=218.1s  acc=0.7344
+2026-06-30 16:01:22,148 | INFO    | troe.train | step 300/537  loss=0.6113  lr=9.79e-06  elapsed=257.7s  acc=0.6406
+2026-06-30 16:02:01,863 | INFO    | troe.train | step 350/537  loss=0.4610  lr=7.73e-06  elapsed=297.4s  acc=0.8125
+2026-06-30 16:02:42,719 | INFO    | troe.train | step 400/537  loss=0.5172  lr=5.66e-06  elapsed=338.3s  acc=0.7344
+2026-06-30 16:02:59,304 | INFO    | troe.train | eval @ step 400: {'acc': 0.6999536752700806, 'n': 4316, 'step': 400}
+2026-06-30 16:03:39,471 | INFO    | troe.train | step 450/537  loss=0.6009  lr=3.60e-06  elapsed=395.0s  acc=0.7031
+2026-06-30 16:04:17,702 | INFO    | troe.train | step 500/537  loss=0.5329  lr=1.53e-06  elapsed=433.2s  acc=0.7656
+2026-06-30 16:05:03,091 | INFO    | troe.train | FINAL eval: {'acc': 0.708294689655304, 'n': 4316}
+2026-06-30 16:05:03,092 | INFO    | troe.train | checkpoint=runs/afqmc/bi-pair/ckpt-537
+2026-06-30 16:05:04,010 | INFO    | troe.train | loss-curve plot=/Users/timi/PycharmProjects/hub-TroE/刘成辉/week08/outputs/plots/afqmc_bi-pair_loss.png

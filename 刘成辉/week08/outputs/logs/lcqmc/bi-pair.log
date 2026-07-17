@@ -1,0 +1,10 @@
+2026-06-30 15:52:12,545 | INFO    | troe.train | device=mps | use_amp=False
+2026-06-30 15:52:12,546 | INFO    | troe.train | output_dir=runs/lcqmc/bi-pair
+2026-06-30 15:52:12,546 | INFO    | troe.train | total_steps=22386 steps_per_epoch=7462
+2026-06-30 15:52:13,326 | INFO    | troe.train | step 1/22386  loss=0.6861  lr=8.94e-09  elapsed=0.8s  acc=0.5938
+2026-06-30 15:52:28,916 | INFO    | troe.train | step 50/22386  loss=0.6645  lr=4.47e-07  elapsed=16.4s  acc=0.7188
+2026-06-30 15:52:44,252 | INFO    | troe.train | step 100/22386  loss=0.6885  lr=8.94e-07  elapsed=31.7s  acc=0.5625
+2026-06-30 15:53:01,409 | INFO    | troe.train | step 150/22386  loss=0.7024  lr=1.34e-06  elapsed=48.9s  acc=0.5000
+2026-06-30 15:53:19,842 | INFO    | troe.train | step 200/22386  loss=0.6353  lr=1.79e-06  elapsed=67.3s  acc=0.6562
+2026-06-30 15:53:46,886 | INFO    | troe.train | eval @ step 200: {'acc': 0.5037491321563721, 'n': 8802, 'step': 200}
+2026-06-30 15:54:05,078 | INFO    | troe.train | step 250/22386  loss=0.6944  lr=2.23e-06  elapsed=112.5s  acc=0.4688

@@ -1,0 +1,10 @@
+2026-06-30 17:17:54,590 | INFO    | troe.train | device=mps | use_amp=False
+2026-06-30 17:17:54,590 | INFO    | troe.train | output_dir=runs/afqmc/bi-triplet
+2026-06-30 17:17:54,590 | INFO    | troe.train | total_steps=166 steps_per_epoch=166
+2026-06-30 17:17:56,280 | INFO    | troe.train | step 1/166  loss=0.8589  lr=1.25e-06  elapsed=1.7s  d_pos=0.534  d_neg=0.675  gap=0.141
+2026-06-30 17:18:55,575 | INFO    | troe.train | step 50/166  loss=0.3589  lr=1.55e-05  elapsed=61.0s  d_pos=0.574  d_neg=1.274  gap=0.700
+2026-06-30 17:20:11,209 | INFO    | troe.train | step 100/166  loss=0.2644  lr=8.80e-06  elapsed=136.6s  d_pos=0.482  d_neg=1.308  gap=0.826
+2026-06-30 17:21:25,304 | INFO    | troe.train | step 150/166  loss=0.1980  lr=2.13e-06  elapsed=210.7s  d_pos=0.480  d_neg=1.383  gap=0.903
+2026-06-30 17:22:05,132 | INFO    | troe.train | FINAL eval: {'acc': 0.4951343834400177, 'n': 4316}
+2026-06-30 17:22:05,134 | INFO    | troe.train | checkpoint=runs/afqmc/bi-triplet/ckpt-166
+2026-06-30 17:22:06,024 | INFO    | troe.train | loss-curve plot=/Users/timi/PycharmProjects/hub-TroE/刘成辉/week08/outputs/plots/afqmc_bi-triplet_loss.png
