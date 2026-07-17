@@ -1,0 +1,15 @@
+[project]
+name = "ai-ask"
+version = "0.1.0"
+description = "中国法律 RAG 问答系统：BM25 + Dense + RRF 混合检索，Streamlit 前端"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "qdrant-client",
+    "fastembed",
+    "rank_bm25",
+    "pdfplumber",
+    "python-docx",
+    "pandas",
+    "openpyxl",
+]

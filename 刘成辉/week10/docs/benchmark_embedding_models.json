@@ -1,0 +1,157 @@
+{
+  "metrics": {
+    "small": {
+      "hit@5": 0.8,
+      "hit@10": 0.8,
+      "mrr": 0.625,
+      "dense_only_hit@5": 0.8,
+      "bm25_only_hit@5": 0.7,
+      "avg_dense_ms": 23.4,
+      "avg_total_ms": 24.5
+    },
+    "large": {
+      "hit@5": 0.9,
+      "hit@10": 0.9,
+      "mrr": 0.717,
+      "dense_only_hit@5": 0.6,
+      "bm25_only_hit@5": 0.7,
+      "avg_dense_ms": 112.7,
+      "avg_total_ms": 114.5
+    },
+    "m3": {
+      "hit@5": 1.0,
+      "hit@10": 1.0,
+      "mrr": 0.75,
+      "dense_only_hit@5": 1.0,
+      "bm25_only_hit@5": 0.7,
+      "avg_dense_ms": 106.8,
+      "avg_total_ms": 108.2
+    }
+  },
+  "models": [
+    {
+      "key": "small",
+      "name": "BAAI/bge-small-zh-v1.5",
+      "collection": "mfd_law_small",
+      "lib": "fastembed",
+      "dim": 512,
+      "size_gb": 0.09,
+      "context": 512
+    },
+    {
+      "key": "large",
+      "name": "BAAI/bge-large-zh-v1.5",
+      "collection": "mfd_law_large",
+      "lib": "flagembed",
+      "dim": 1024,
+      "size_gb": 1.3,
+      "context": 512
+    },
+    {
+      "key": "m3",
+      "name": "BAAI/bge-m3",
+      "collection": "mfd_law_m3",
+      "lib": "flagembed_m3",
+      "dim": 1024,
+      "size_gb": 2.7,
+      "context": 8192
+    }
+  ],
+  "test_cases": [
+    {
+      "id": "Q01",
+      "query": "自然人下落不明多久才能宣告失踪？",
+      "expected": [
+        40,
+        41
+      ],
+      "category": "人身权",
+      "note": "基础事实查询，单条直查"
+    },
+    {
+      "id": "Q02",
+      "query": "约定的违约金过高，能否请求法院减少？",
+      "expected": [
+        585
+      ],
+      "category": "合同",
+      "note": "复合条件查询（两个要素：'过高' + '减少'）"
+    },
+    {
+      "id": "Q03",
+      "query": "借款合同没有约定利息，债权人能否主张利息？",
+      "expected": [
+        680
+      ],
+      "category": "合同",
+      "note": "否定条件查询（'没有约定' + '能否主张'）"
+    },
+    {
+      "id": "Q04",
+      "query": "格式条款在什么情况下无效？",
+      "expected": [
+        497
+      ],
+      "category": "合同",
+      "note": "列举型问题，召回 497 条为主"
+    },
+    {
+      "id": "Q05",
+      "query": "侵权责任的一般归责原则是什么？",
+      "expected": [
+        1165
+      ],
+      "category": "侵权",
+      "note": "法理概念查询，需要召回 1165 条总则"
+    },
+    {
+      "id": "Q06",
+      "query": "夫妻在婚姻关系存续期间的工资属于共同财产吗？",
+      "expected": [
+        1062
+      ],
+      "category": "婚姻家庭",
+      "note": "长 query，看 dense 语义理解"
+    },
+    {
+      "id": "Q07",
+      "query": "法定继承的顺序是什么？",
+      "expected": [
+        1127
+      ],
+      "category": "继承",
+      "note": "列举型（多继承顺序），应召回 1127 条"
+    },
+    {
+      "id": "Q08",
+      "query": "8岁小孩偷偷花家里钱买玩具，能要求商家退款吗？",
+      "expected": [
+        20,
+        19,
+        144
+      ],
+      "category": "行为能力",
+      "note": "口语化情景题，需要召回行为能力 + 效力条"
+    },
+    {
+      "id": "Q09",
+      "query": "结婚需要满足哪些条件？怎么办理登记？",
+      "expected": [
+        1049,
+        1048
+      ],
+      "category": "婚姻家庭",
+      "note": "多要素复合（条件 + 登记），至少召回 1049"
+    },
+    {
+      "id": "Q10",
+      "query": "定金和违约金能否同时主张？",
+      "expected": [
+        586,
+        585
+      ],
+      "category": "合同",
+      "note": "概念辨析（定金 vs 违约金），需召回 585/586"
+    }
+  ]
+}

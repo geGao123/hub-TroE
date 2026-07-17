@@ -1,0 +1,7 @@
+qdrant-client
+fastembed
+rank_bm25
+pdfplumber
+python-docx
+pandas
+openpyxl
