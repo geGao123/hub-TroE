@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>timiAgent Web — Debug</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="layout">
+
+    <!-- 左：紧凑对话区 -->
+    <main class="chat">
+      <header>
+        <h1>💬 timiAgent</h1>
+        <div class="header-tools">
+          <span class="stats" id="stats">0 msgs</span>
+        </div>
+      </header>
+
+      <div id="messages" class="messages"></div>
+
+      <form id="form" class="input-row">
+        <input id="input" type="text" placeholder="输入内容回车发送，或 /help /clear /history /tools" autocomplete="off" autofocus />
+        <button type="submit" class="btn primary">发送</button>
+      </form>
+    </main>
+
+    <!-- 右：调试看见区 -->
+    <aside class="debug" id="debug-aside">
+
+      <!-- 顶部调试级别 + 按钮 -->
+      <div class="debug-bar">
+        <label class="debug-level">
+          🐞 调试级别
+          <select id="debug-level">
+            <option value="0">L0 — 只看最终回复</option>
+            <option value="1" selected>L1 — 工具调用过程</option>
+            <option value="2">L2 — LLM 原始请求/响应</option>
+          </select>
+        </label>
+        <button id="btn-clear" class="btn">/clear</button>
+        <button id="btn-exit-focus" class="btn" style="display:none">⤬ 退出全屏</button>
+      </div>
+
+      <!-- 面板 1: System Prompt -->
+      <section class="panel" data-panel="system">
+        <header class="panel-header">
+          <span class="panel-title">📋 System Prompt</span>
+          <div class="panel-actions">
+            <button class="panel-btn focus-btn" title="全屏显示此面板">⛶</button>
+            <button class="panel-btn collapse-btn" title="折叠此面板">−</button>
+          </div>
+        </header>
+        <div class="panel-body" id="panel-system">
+          <pre class="code-block" id="system-prompt">加载中…</pre>
+        </div>
+      </section>
+
+      <!-- 面板 2: Tool Schemas -->
+      <section class="panel" data-panel="tools">
+        <header class="panel-header">
+          <span class="panel-title">🛠 Tool Schemas (<span id="tools-count">0</span>)</span>
+          <div class="panel-actions">
+            <button class="panel-btn focus-btn" title="全屏显示此面板">⛶</button>
+            <button class="panel-btn collapse-btn" title="折叠此面板">−</button>
+          </div>
+        </header>
+        <div class="panel-body" id="panel-tools">
+          <div id="tools-detail"></div>
+        </div>
+      </section>
+
+      <!-- 面板 3: Rounds — 故事线 + LLM 调用详情 (融合 history + wire) -->
+      <section class="panel" data-panel="wire">
+        <header class="panel-header">
+          <span class="panel-title">🔁 Rounds — 故事线 + 调用详情</span>
+          <div class="panel-actions">
+            <button class="panel-btn focus-btn" title="全屏显示此面板">⛶</button>
+            <button class="panel-btn collapse-btn" title="折叠此面板">−</button>
+          </div>
+        </header>
+        <div class="panel-body" id="panel-wire">
+          <div class="placeholder">发送一条消息开始, 故事线会按 Round 分组, 点 LLM 调用可展开查看请求/响应</div>
+        </div>
+      </section>
+
+    </aside>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
